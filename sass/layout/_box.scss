@@ -1,0 +1,9 @@
+.wrapper {
+    .box {
+        background-color: $light-white;
+
+        &:nth-of-type(odd) {
+            background-color: $medium-light-white;
+        }
+    }
+}
