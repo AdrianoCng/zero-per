@@ -1,9 +1,14 @@
 .wrapper {
     .box {
         background-color: $light-white;
+        cursor: pointer;
 
         &:nth-of-type(odd) {
             background-color: $medium-light-white;
+        }
+
+        &:hover {
+            border: 1px outset $medium-light-white;
         }
     }
 }
