@@ -1,13 +1,24 @@
 import React from 'react';
+import useBoard from '../hooks/useBoard';
+
 import Box from './Box';
 
-const boxes = new Array(9).fill();
-
 const Board = () => {
+    const { boxes, selectBox } = useBoard();
+
     return (
         <div className="wrapper">
-            {boxes.map((_, index) => (
-                <Box key={index} />
+            {boxes.map((square, index) => (
+                <Box
+                    key={index}
+                    value={square}
+                    onClick={() => {
+                        if (square) {
+                            return
+                        }
+                        selectBox(index)
+                    }}
+                />
             ))}
         </div>
     )
