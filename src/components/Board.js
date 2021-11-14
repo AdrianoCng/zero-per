@@ -4,7 +4,7 @@ import Box from './Box';
 
 const Board = ({ boxes, selectBox }) => {
     return (
-        <div className="wrapper">
+        <>
             {boxes.map((square, index) => (
                 <Box
                     key={index}
@@ -16,7 +16,7 @@ const Board = ({ boxes, selectBox }) => {
                     }}
                 />
             ))}
-        </div>
+        </>
     )
 };
 

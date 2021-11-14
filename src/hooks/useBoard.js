@@ -15,6 +15,10 @@ const useBoard = () => {
     const [boxes, setBoxes] = useState(new Array(9).fill(""));
     const [isX, setIsX] = useState(true);
     const [winner, setWinner] = useState(null);
+    const [player1Name, setPlayer1Name] = useState("");
+    const [player2Name, setPlayer2Name] = useState("");
+    const [scorePlayer1, setScorePlayer1] = useState(0);
+    const [scorePlayer2, setScorePlayer2] = useState(0);
 
     const calculateWinner = () => {
         for (let i = 0; i < winningCombinations.length; i++) {
@@ -39,11 +43,21 @@ const useBoard = () => {
         }
     }
 
+    const restart = () => {
+        setBoxes(new Array(9).fill(""));
+
+        setScorePlayer1(0);
+        setScorePlayer2(0);
+    }
+
     return {
         boxes,
         selectBox,
         calculateWinner,
         winner,
+        player1Name,
+        player2Name,
+        restart
     }
 }
 

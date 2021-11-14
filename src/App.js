@@ -4,7 +4,7 @@ import Panel from './components/Panel';
 import useBoard from './hooks/useBoard';
 
 const App = () => {
-    const { boxes, selectBox, calculateWinner } = useBoard();
+    const { boxes, selectBox, calculateWinner, restart } = useBoard();
 
     useEffect(() => {
         calculateWinner()
@@ -12,11 +12,15 @@ const App = () => {
 
     return (
         <div className="container grid">
-            <Panel />
-            <Board
-                boxes={boxes}
-                selectBox={selectBox}
+            <Panel
+                restart={restart}
             />
+            <div className="wrapper">
+                <Board
+                    boxes={boxes}
+                    selectBox={selectBox}
+                />
+            </div>
         </div>
     )
 }

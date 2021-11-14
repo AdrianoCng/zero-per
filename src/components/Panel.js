@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Panel = () => {
+const Panel = ({ restart }) => {
     return (
         <div className="panel">
             <div className="player-score">
@@ -14,7 +14,9 @@ const Panel = () => {
             </div>
 
             <div className="buttons">
-                <button className="button restart-button">Restart</button>
+                <button className="button restart-button" onClick={() => {
+                    restart();
+                }}>Restart</button>
             </div>
         </div>
     )
