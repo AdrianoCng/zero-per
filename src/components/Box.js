@@ -7,11 +7,6 @@ const Box = ({ onClick, value }) => {
     )
 }
 
-Box.defaultProps = {
-    onClick: () => { },
-    value: ""
-}
-
 Box.propTypes = {
     onClick: PropTypes.func.isRequired,
     value: PropTypes.string.isRequired

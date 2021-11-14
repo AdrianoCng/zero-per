@@ -1,15 +1,8 @@
-import React, { useEffect } from 'react';
-import useBoard from '../hooks/useBoard';
-
+import React from 'react';
+import PropTypes from 'prop-types';
 import Box from './Box';
 
-const Board = () => {
-    const { boxes, selectBox, calculateWinner, winner } = useBoard();
-
-    useEffect(() => {
-        calculateWinner()
-    }, [boxes]);
-
+const Board = ({ boxes, selectBox }) => {
     return (
         <div className="wrapper">
             {boxes.map((square, index) => (
@@ -17,15 +10,19 @@ const Board = () => {
                     key={index}
                     value={square}
                     onClick={() => {
-                        if (square || winner) {
-                            return
+                        if (!square) {
+                            selectBox(index)
                         }
-                        selectBox(index)
                     }}
                 />
             ))}
         </div>
     )
+};
+
+Board.propTypes = {
+    boxes: PropTypes.array.isRequired,
+    selectBox: PropTypes.func.isRequired
 }
 
 export default Board;

@@ -28,13 +28,15 @@ const useBoard = () => {
     };
 
     const selectBox = index => {
-        setBoxes(prev => {
-            prev[index] = isX ? 'x' : 'o';
+        if (!winner) {
+            setBoxes(prev => {
+                prev[index] = isX ? 'x' : 'o';
 
-            return [...prev]
-        });
+                return [...prev]
+            });
 
-        setIsX(prev => !prev);
+            setIsX(prev => !prev);
+        }
     }
 
     return {
