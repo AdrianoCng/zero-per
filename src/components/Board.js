@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import useBoard from '../hooks/useBoard';
 
 import Box from './Box';
 
 const Board = () => {
-    const { boxes, selectBox } = useBoard();
+    const { boxes, selectBox, calculateWinner, winner } = useBoard();
+
+    useEffect(() => {
+        calculateWinner()
+    }, [boxes]);
 
     return (
         <div className="wrapper">
@@ -13,7 +17,7 @@ const Board = () => {
                     key={index}
                     value={square}
                     onClick={() => {
-                        if (square) {
+                        if (square || winner) {
                             return
                         }
                         selectBox(index)
