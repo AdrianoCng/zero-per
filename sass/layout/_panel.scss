@@ -8,9 +8,10 @@
     .player-score {
         font-size: 4.8rem;
         text-align: center;
-        margin-bottom: 50px;
 
         &:first-of-type {
+            margin-bottom: 50px;
+
             .score {
                 span {
                     color: $blue;
