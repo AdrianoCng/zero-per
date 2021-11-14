@@ -2,6 +2,9 @@
     .box {
         background-color: $light-white;
         cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
 
         &:nth-of-type(odd) {
             background-color: $medium-light-white;
@@ -9,6 +12,46 @@
 
         &:hover {
             border: 1px outset $medium-light-white;
+        }
+
+        &.x {
+            &::after,
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 35px;
+                background-color: $blue;
+            }
+            &::after {
+                transform: rotate(45deg);
+            }
+            &::before {
+                transform: rotate(-45deg);
+            }
+        }
+
+        &.o {
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+            }
+            &::after {
+                width: 75%;
+                height: 75%;
+                background-color: $green;
+            }
+            &::before {
+                width: 50%;
+                height: 50%;
+                background-color: inherit;
+                z-index: 1;
+            }
         }
     }
 }
