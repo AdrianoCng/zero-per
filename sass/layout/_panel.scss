@@ -1,0 +1,48 @@
+.panel {
+    font-size: 4.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: $black;
+
+    .player-score {
+        font-size: 4.8rem;
+        text-align: center;
+        margin-bottom: 50px;
+
+        &:first-of-type {
+            .score {
+                span {
+                    color: $blue;
+                }
+            }
+        }
+
+        &:nth-of-type(2) {
+            .score {
+                span {
+                    color: $green;
+                }
+            }
+        }
+
+        .player-name {
+            text-align: center;
+        }
+
+        .score {
+            font-size: 3.6rem;
+        }
+    }
+
+    .buttons {
+        flex-grow: 1;
+        position: relative;
+
+        .restart-button {
+            position: absolute;
+            bottom: 0;
+            width: calc(100% - 20px);
+        }
+    }
+}

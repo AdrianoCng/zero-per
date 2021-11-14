@@ -4,6 +4,11 @@
 // Layout
 @import "./layout/box";
 @import "./layout/board";
+@import "./layout/layout";
+@import "./layout/panel";
 
 // Base
 @import "./base/reset";
+
+// Components
+@import "./components/buttons";

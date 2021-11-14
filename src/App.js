@@ -1,9 +1,13 @@
 import React from 'react';
 import Board from './components/Board';
+import Panel from './components/Panel';
 
 const App = () => {
     return (
-        <Board />
+        <div className="container grid">
+            <Panel />
+            <Board />
+        </div>
     )
 }
 

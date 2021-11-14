@@ -8,14 +8,13 @@ const Box = ({ onClick, value }) => {
 }
 
 Box.defaultProps = {
-    turn: false,
-    onClick: () => { }
+    onClick: () => { },
+    value: ""
 }
 
 Box.propTypes = {
-    turn: PropTypes.bool.isRequired,
     onClick: PropTypes.func.isRequired,
-    value: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+    value: PropTypes.string.isRequired
 }
 
 export default Box;
