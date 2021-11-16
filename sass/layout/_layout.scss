@@ -16,10 +16,13 @@
 
 .grid {
     display: grid;
-    grid-template-rows: 1fr;
     grid-template-columns: 1fr auto;
     background-color: $medium-light-white;
-    margin-top: 20px;
     border-radius: 5px;
     box-shadow: 1px 1px 5px $light-grey;
+    position: absolute;
+    height: auto;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -25%);
 }
