@@ -3,12 +3,22 @@
     border-radius: 10px;
     border: none;
     font-size: 2.4rem;
-    background-color: white;
-    color: $black;
-    box-shadow: 1px 1px 2.5px $black;
+    background-color: $beige;
+    color: $white;
+    // box-shadow: 1px 1px 2.5px $box-shadow;
     cursor: pointer;
 
     &:hover {
-        border: 1px solid $light-grey;
+        transform: scale(1.01);
     }
+
+    &.small {
+        width: fit-content;
+        padding: 5px;
+    }
+
+    // &.blue {
+    //     background-color: $blue;
+    //     color: $light-yellow;
+    // }
 }

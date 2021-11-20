@@ -17,12 +17,46 @@
 .grid {
     display: grid;
     grid-template-columns: 1fr auto;
-    background-color: $medium-light-white;
+    background-color: $blue;
     border-radius: 5px;
-    box-shadow: 1px 1px 5px $light-grey;
     position: absolute;
     height: auto;
     left: 50%;
     top: 25%;
     transform: translate(-50%, -25%);
+}
+
+.panel {
+    font-size: 4.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .player-score {
+        font-size: 4.8rem;
+        text-align: center;
+
+        &:first-of-type {
+            margin-bottom: 50px;
+        }
+
+        .player-name {
+            text-align: center;
+        }
+
+        .score {
+            font-size: 3.6rem;
+        }
+    }
+
+    .buttons {
+        flex-grow: 1;
+        position: relative;
+
+        .restart-button {
+            position: absolute;
+            bottom: 0;
+            width: calc(100% - 20px);
+        }
+    }
 }
