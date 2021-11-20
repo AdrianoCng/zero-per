@@ -1,8 +1,5 @@
 input {
     border: 1px solid $grey;
     border-radius: 5px;
-
-    &:focus {
-        border: 1px solid $grey;
-    }
+    outline: none;
 }
